@@ -25,7 +25,7 @@
   "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_6B_rotary",
 
   "train_set": "architext.train.index",
-  "val_set": " architext.valid.index",
+  "val_set": "architext.valid.index",
   },
 
   "val_batches": 100,
