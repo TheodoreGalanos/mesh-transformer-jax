@@ -27,6 +27,9 @@
   "train_set": "architext.train.index",
   "val_set": "architext.valid.index",
 
+  "eval_harness_tasks": [
+  ],
+  
   "val_batches": 100,
   "val_every": 500,
   "ckpt_every": 1000,
