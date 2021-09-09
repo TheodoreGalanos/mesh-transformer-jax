@@ -26,7 +26,6 @@
 
   "train_set": "architext.train.index",
   "val_set": "architext.valid.index",
-  },
 
   "val_batches": 100,
   "val_every": 500,
