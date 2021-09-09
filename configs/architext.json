@@ -12,12 +12,12 @@
   "per_replica_batch": 1,
   "gradient_accumulation_steps": 32,
 
-  "warmup_steps": 3000,
-  "anneal_steps": 300000,
-  "lr": 5e-5,
-  "end_lr": 5e-6,
+  "warmup_steps": 2500,
+  "anneal_steps": 22500,
+  "lr": 2e-5,
+  "end_lr": 2e-6,
   "weight_decay": 0.1,
-  "total_steps": 350000,
+  "total_steps": 25000,
 
   "tpu_size": 8,
 
@@ -30,7 +30,7 @@
 
   "val_batches": 100,
   "val_every": 500,
-  "ckpt_every": 500,
+  "ckpt_every": 1000,
   "keep_every": 10000,
 
   "name": "GPT3_6B_pile_rotary_architext",
