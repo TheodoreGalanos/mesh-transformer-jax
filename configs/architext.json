@@ -26,7 +26,7 @@
 
   "train_set": "architext.train.index",
   "val_set": {
-    "architext": "architext.valid.index",
+    "architext": "architext.valid.index"
   },
   
   "eval_harness_tasks": [
