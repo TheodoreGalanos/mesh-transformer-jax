@@ -14,15 +14,15 @@
 
   "warmup_steps": 1270,
   "anneal_steps": 11430,
-  "lr": 1.2e-4,
-  "end_lr": 1.2e-5,
+  "lr": 2.25e-4,
+  "end_lr": 2.25e-5,
   "weight_decay": 0.1,
   "total_steps": 12700,
 
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/from_scratch/750M",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/from_scratch/897M",
 
   "train_set": "architext.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPTJ-Architext-750M",
+  "name": "GPTJ-Architext-897M",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
