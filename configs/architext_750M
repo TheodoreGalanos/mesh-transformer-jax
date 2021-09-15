@@ -1,6 +1,6 @@
 {
-  "layers": 38,
-  "d_model": 1280,
+  "layers": 39,
+  "d_model": 1160,
   "n_heads": 16,
   "n_vocab": 50400,
   "norm": "layernorm",
@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/from_scratch/760M",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/from_scratch/750M",
 
   "train_set": "architext.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPTJ-Architext-760M",
+  "name": "GPTJ-Architext-750M",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
