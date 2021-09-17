@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/162M",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/162M_3epoch",
 
   "train_set": "architext.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPTJ-Architext-162M",
+  "name": "GPTJ-Architext-162M_3epoch_lr",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
