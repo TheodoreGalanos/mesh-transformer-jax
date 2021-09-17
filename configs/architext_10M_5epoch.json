@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/162M_3epoch",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/10M_5epoch",
 
   "train_set": "architext.train.index",
   "val_set": {
