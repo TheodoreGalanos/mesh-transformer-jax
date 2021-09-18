@@ -1,6 +1,6 @@
 {
   "layers": 6,
-  "d_model": 768,
+  "d_model": 1024,
   "n_heads": 16,
   "n_vocab": 50400,
   "norm": "layernorm",
