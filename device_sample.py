@@ -41,7 +41,8 @@ if __name__ == "__main__":
     d_model = params["d_model"]
     n_heads = params["n_heads"]
     n_vocab = params["n_vocab"]
-    seq = params["seq"]
+    #seq = params["seq"]
+    seq = 784
     norm = params["norm"]
 
     params["sampler"] = nucleaus_sample
