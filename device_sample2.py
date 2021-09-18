@@ -6,7 +6,7 @@ import jax
 import numpy as np
 import optax
 import os
-import tqdm
+from tqdm import tqdm
 
 from mesh_transformer import util
 from mesh_transformer.checkpoint import read_ckpt
