@@ -164,7 +164,8 @@ if __name__ == "__main__":
                     padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
                     batched_tokens = np.array([padded_tokens] * total_batch)
                     length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
-                    output = network.generate(batched_tokens, length, 512, {"top_p": np.ones(total_batch) * 0.9,
+                    output = network.generate(batched_tokens, length, 512, {"top_p": np.ones(total_batch) * param_set[0],
+                                                                            "top_k": np.ones(total_batch) * param_set[1],
                                                                             "temp": np.ones(total_batch) * 0.75})
                     decoded_output = []
                     for idx, o in enumerate(output[1][0][:, :, 0]):
