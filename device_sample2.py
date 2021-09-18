@@ -41,7 +41,8 @@ if __name__ == "__main__":
     d_model = params["d_model"]
     n_heads = params["n_heads"]
     n_vocab = params["n_vocab"]
-    seq = params["seq"]
+    #seq = params["seq"]
+    seq = 784
     norm = params["norm"]
 
     params["sampler"] = nucleaus_sample
@@ -160,7 +161,8 @@ if __name__ == "__main__":
                     tokens = tokenizer.encode(prompt)
                     start = time.time()
                     provided_ctx = len(tokens)
-                    pad_amount = seq - provided_ctx
+                    #pad_amount = seq - provided_ctx
+                    pad_amount = seq + provided_ctx
                     padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
                     batched_tokens = np.array([padded_tokens] * total_batch)
                     length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
