@@ -9,24 +9,24 @@
 
   "seq": 2048,
   "cores_per_replica": 8,
-  "per_replica_batch": 1,
+  "per_replica_batch": 2,
   "gradient_accumulation_steps": 32,
 
-  "warmup_steps": 2500,
-  "anneal_steps": 22500,
-  "lr": 2e-5,
-  "end_lr": 2e-6,
+  "warmup_steps": 1260,
+  "anneal_steps": 11340,
+  "lr": 5e-5,
+  "end_lr": 5e-6,
   "weight_decay": 0.1,
-  "total_steps": 25000,
+  "total_steps": 12600,
 
   "tpu_size": 8,
 
   "bucket": "all-models",
   "model_dir": "all-models/models/EleutherAI/GPT-J/scaling_laws/pile_pretrained/mesh_jax_pile_150M_architext",
 
-  "train_set": "architext.train.index",
+  "train_set": "architext_v2.train.index",
   "val_set": {
-    "architext": "architext.valid.index"},
+    "architext": "architext_v2.valid.index"},
   
   "eval_harness_tasks": [
   ],
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPT3_150M_pile_architext",
+  "name": "GPT3_150M_pretrained_pile_finetuned_architext",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
