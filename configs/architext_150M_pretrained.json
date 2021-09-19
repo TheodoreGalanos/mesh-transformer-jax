@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "all-models/models/EleutherAI/GPT-J/scaling_laws/pile_pretrained/mesh_jax_pile_150M_architext",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/pile_pretrained/mesh_jax_pile_150M_architext",
 
   "train_set": "architext_v2.train.index",
   "val_set": {
