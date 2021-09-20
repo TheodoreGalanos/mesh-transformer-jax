@@ -30,7 +30,7 @@ if __name__ == "__main__":
     params = json.load(open(args.config))
 
     gradient_accumulation_steps = params.get("gradient_accumulation_steps", 1)
-    per_replica_batch = 5 #params["per_replica_batch"]
+    per_replica_batch = params["per_replica_batch"]
     cores_per_replica = params["cores_per_replica"]
 
     assert cores_per_replica <= 8
@@ -173,7 +173,7 @@ if __name__ == "__main__":
                     decoded_output.append(tokenizer.decode(o))
 
                 outputs.append(decoded_output)
-            flat_outputs = [item for sublist in outputs for item in sublist]
-            with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
-                for output in flat_outputs:
-                    f.write(output + "\n")
+                flat_outputs = [item for sublist in outputs for item in sublist]
+                with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
+                    for output in flat_outputs:
+                        f.write(output + "\n")
