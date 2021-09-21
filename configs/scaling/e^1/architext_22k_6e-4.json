@@ -14,15 +14,15 @@
 
   "warmup_steps": 1260,
   "anneal_steps": 11340,
-  "lr": 1e-4,
-  "end_lr": 1e-5,
+  "lr": 6e-4,
+  "end_lr": 6e-5,
   "weight_decay": 0.1,
   "total_steps": 12600,
 
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/22k_1e-4",
+  "model_dir": "models/EleutherAI/GPT-J/scaling_laws/22k_6e-4",
 
   "train_set": "architext_v2.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "22k_1e-4",
+  "name": "22k_6e-4",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
