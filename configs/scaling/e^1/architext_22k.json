@@ -1,10 +1,7 @@
 {
   "layers": 2,
-<<<<<<< HEAD
   "d_model": 24,
-=======
   "d_model": 32,
->>>>>>> f6efd863d6a787473ceb94e57fb94e72a16eb36f
   "n_heads": 16,
   "n_vocab": 50400,
   "norm": "layernorm",
