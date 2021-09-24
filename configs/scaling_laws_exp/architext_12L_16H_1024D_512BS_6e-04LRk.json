@@ -29,6 +29,6 @@
     "ckpt_every": 1000,
     "keep_every": 10000,
     "name": "12L_16H_1024D_512BS_6e-04LR",
-    "wandb_project": "GPT-J-Architext",
+    "wandb_project": "GPTJ-Architext-SL_large",
     "comment": ""
 }
