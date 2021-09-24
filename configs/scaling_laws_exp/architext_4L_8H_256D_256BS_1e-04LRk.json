@@ -18,7 +18,7 @@
     "total_steps": 12600,
     "tpu_size": 8,
     "bucket": "all-models",
-    "model_dir": "models/EleutherAI/GPT-J/scaling_laws/big_experiment/4L_8H_256D_256BS_1e-04LR",
+    "model_dir": "models/EleutherAI/GPT-J/scaling_laws/v2/4L_8H_256D_256BS_1e-04LR",
     "train_set": "architext_v2.train.index",
     "val_set": {
         "architext": "architext_v2.valid.index"
