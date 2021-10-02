@@ -1,6 +1,6 @@
 {
     "layers": 8,
-    "d_model": 736,
+    "d_model": 704,
     "n_heads": 16,
     "n_vocab": 50400,
     "norm": "layernorm",
@@ -18,7 +18,7 @@
     "total_steps": 1576,
     "tpu_size": 8,
     "bucket": "all-models",
-    "model_dir": "scaling_laws/large_experiment/gptj/8L_16H_736D_512BS_4e-04LR",
+    "model_dir": "scaling_laws/large_experiment/gptj/8L_16H_704D_512BS_4e-04LR",
     "train_set": "architext_v2.train.index",
     "val_set": {
         "architext": "architext_v2.valid.index"
@@ -28,7 +28,7 @@
     "val_every": 4,
     "ckpt_every": 50,
     "keep_every": 500,
-    "name": "8L_16H_736D_512BS_4e-04LR",
+    "name": "8L_16H_704D_512BS_4e-04LR",
     "wandb_project": "GPTJ-Architext-SL_large",
     "comment": ""
 }
