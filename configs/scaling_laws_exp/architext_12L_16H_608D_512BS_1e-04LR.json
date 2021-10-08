@@ -1,6 +1,6 @@
 {
     "layers": 12,
-    "d_model": 592,
+    "d_model": 608,
     "n_heads": 16,
     "n_vocab": 50400,
     "norm": "layernorm",
@@ -12,13 +12,13 @@
     "gradient_accumulation_steps": 256,
     "warmup_steps": 157,
     "anneal_steps": 1419,
-    "lr": 0.0004,
-    "end_lr": 4e-05,
+    "lr": 0.0001,
+    "end_lr": 1e-05,
     "weight_decay": 0.1,
     "total_steps": 1576,
     "tpu_size": 8,
     "bucket": "all-models",
-    "model_dir": "scaling_laws/large_experiment/gptj/12L_16H_592D_512BS_4e-04LR",
+    "model_dir": "scaling_laws/large_experiment/gptj/12L_16H_608D_512BS_1e-04LR",
     "train_set": "architext_v2.train.index",
     "val_set": {
         "architext": "architext_v2.valid.index"
@@ -28,7 +28,7 @@
     "val_every": 4,
     "ckpt_every": 50,
     "keep_every": 500,
-    "name": "12L_16H_592D_512BS_4e-04LR",
+    "name": "12L_16H_608D_512BS_1e-04LR",
     "wandb_project": "GPTJ-Architext-SL_large",
     "comment": ""
 }
