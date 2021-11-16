@@ -1,0 +1,9 @@
+gs://all-models/data/tfrecords/shuffled_endoftext/architext_train_807273.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2_1620749.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2large_922733.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2medium_1590626.tfrecords
+gs://all-models/data/tfrecords/v3/gptneo_2127050.tfrecords
+gs://all-models/data/tfrecords/v4/gpt2_2695704.tfrecords
+gs://all-models/data/tfrecords/v4/gpt2medium_2724134.tfrecords
+gs://all-models/data/tfrecords/v4/gptneo125m_1278377.tfrecords
+gs://all-models/data/tfrecords/v4/gptneo1300_1477942.tfrecords
