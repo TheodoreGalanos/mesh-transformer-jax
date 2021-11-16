@@ -1,0 +1,5 @@
+gs://all-models/data/tfrecords/shuffled_endoftext/architext_train_807273.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2_1620749.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2large_922733.tfrecords
+gs://all-models/data/tfrecords/v3/gpt2medium_1590626.tfrecords
+gs://all-models/data/tfrecords/v3/gptneo_2127050.tfrecords
