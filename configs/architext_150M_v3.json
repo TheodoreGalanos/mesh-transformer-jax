@@ -37,6 +37,6 @@
   "keep_every": 10000,
 
   "name": "mesh_jax_pile_150M_architext_v3data",
-  "wandb_project": "GPT-J-Architext",
+  "wandb_project": "architext",
   "comment": ""
 }
