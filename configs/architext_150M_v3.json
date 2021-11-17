@@ -1,6 +1,6 @@
 {
   "layers": 12,
-  "d_model": 4096,
+  "d_model": 768,
   "n_heads": 16,
   "n_vocab": 50400,
   "norm": "layernorm",
@@ -12,17 +12,17 @@
   "per_replica_batch": 2,
   "gradient_accumulation_steps": 256,
 
-  "warmup_steps": 2500,
-  "anneal_steps": 22500,
-  "lr": 2e-5,
-  "end_lr": 2e-6,
+  "warmup_steps": 1300,
+  "anneal_steps": 11700,
+  "lr": 5e-5,
+  "end_lr": 5e-6,
   "weight_decay": 0.1,
-  "total_steps": 25000,
+  "total_steps": 12600,
 
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "all-models/models/EleutherAI/GPT-J/150M_architext_v3",
+  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v3",
 
   "train_set": "architext_v3.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "mesh_jax_pile_150M_architext_v3data",
-  "wandb_project": "architext",
+  "name": "GPT3_150M_pretrained_pile_finetuned_architext",
+  "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
