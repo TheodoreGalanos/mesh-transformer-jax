@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "mesh_jax_pile_150M_architect",
+  "name": "mesh_jax_pile_150M_architext_v3data",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
