@@ -17,7 +17,7 @@
   "lr": 5e-5,
   "end_lr": 5e-6,
   "weight_decay": 0.1,
-  "total_steps": 1338,
+  "total_steps": 13380,
 
   "tpu_size": 8,
 
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPTJ_150M_finetuned_v3_dedup",
+  "name": "GPTJ_150M_finetuned_v3_dedup2",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
