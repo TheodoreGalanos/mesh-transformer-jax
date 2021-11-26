@@ -1,1 +1,1 @@
-gs://all-models/data/tfrecords/shuffled_endoftext/architext_train_807273.tfrecords
+gs://all-models/data/tfrecords/v3_dedup/v3_dedupicated_856728.tfrecords
