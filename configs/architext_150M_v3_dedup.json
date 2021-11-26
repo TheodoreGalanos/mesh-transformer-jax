@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v3",
+  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v3_dedup",
 
   "train_set": "architext_v3_dedup.train.index",
   "val_set": {
@@ -36,7 +36,7 @@
   "ckpt_every": 1000,
   "keep_every": 10000,
 
-  "name": "GPT3_150M_pretrained_pile_finetuned_architext",
+  "name": "GPTJ_150M_finetuned_v3_dedup",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
