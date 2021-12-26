@@ -1,0 +1,42 @@
+{
+  "layers": 12,
+  "d_model": 768,
+  "n_heads": 16,
+  "n_vocab": 50400,
+  "norm": "layernorm",
+  "pe": "rotary",
+  "pe_rotary_dims": 64,
+
+  "seq": 2048,
+  "cores_per_replica": 8,
+  "per_replica_batch": 2,
+  "gradient_accumulation_steps": 32,
+
+  "warmup_steps": 1338,
+  "anneal_steps": 12042,
+  "lr": 5e-5,
+  "end_lr": 5e-6,
+  "weight_decay": 0.1,
+  "total_steps": 13380,
+
+  "tpu_size": 8,
+
+  "bucket": "all-models",
+  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v1v2_augdedup",
+
+  "train_set": "architext_v1_and_v2_augmented_train.index",
+  "val_set": {
+    "architext": "architext_v3_dedup.valid.index"},
+  
+  "eval_harness_tasks": [
+  ],
+  
+  "val_batches": 100,
+  "val_every": 500,
+  "ckpt_every": 1000,
+  "keep_every": 10000,
+
+  "name": "GPTJ_150M_finetuned_v1v2_augdedup",
+  "wandb_project": "GPT-J-Architext",
+  "comment": ""
+}
