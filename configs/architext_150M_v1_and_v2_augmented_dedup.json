@@ -12,12 +12,12 @@
   "per_replica_batch": 2,
   "gradient_accumulation_steps": 32,
 
-  "warmup_steps": 1338,
-  "anneal_steps": 12042,
+  "warmup_steps": 5710,
+  "anneal_steps": 51390,
   "lr": 5e-5,
   "end_lr": 5e-6,
   "weight_decay": 0.1,
-  "total_steps": 13380,
+  "total_steps": 57100,
 
   "tpu_size": 8,
 
@@ -33,8 +33,8 @@
   
   "val_batches": 100,
   "val_every": 500,
-  "ckpt_every": 1000,
-  "keep_every": 10000,
+  "ckpt_every": 5000,
+  "keep_every": 15000,
 
   "name": "GPTJ_150M_finetuned_v1v2_augdedup",
   "wandb_project": "GPT-J-Architext",
