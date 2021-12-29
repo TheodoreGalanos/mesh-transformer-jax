@@ -26,7 +26,7 @@
 
   "train_set": "architext_v1_and_v2_augmented_train.index",
   "val_set": {
-    "architext": "architext_v3_dedup.valid.index"},
+    "architext": "architext_v1_and_v2_augmented_train.index"},
   
   "eval_harness_tasks": [
   ],
