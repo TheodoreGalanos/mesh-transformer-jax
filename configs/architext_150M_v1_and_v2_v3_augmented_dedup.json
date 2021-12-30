@@ -12,21 +12,21 @@
   "per_replica_batch": 2,
   "gradient_accumulation_steps": 32,
 
-  "warmup_steps": 6040,
-  "anneal_steps": 54360,
+  "warmup_steps": 5800,
+  "anneal_steps": 52200,
   "lr": 5e-5,
   "end_lr": 5e-6,
   "weight_decay": 0.1,
-  "total_steps": 60400,
+  "total_steps": 58000,
 
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v1v2_augdedup",
+  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_150M_architext_v1v2v3_augdedup",
 
-  "train_set": "architext_v1_and_v2_augmented_train.index",
+  "train_set": "architext_v1_and_v2_v3_augmented_train.index",
   "val_set": {
-    "architext": "architext_v1_and_v2_augmented_train.index"},
+    "architext": "architext_v1_and_v2_v3_augmented_test.index"},
   
   "eval_harness_tasks": [
   ],
@@ -34,9 +34,9 @@
   "val_batches": 100,
   "val_every": 500,
   "ckpt_every": 5000,
-  "keep_every": 15000,
+  "keep_every": 14500,
 
-  "name": "GPTJ_150M_finetuned_v1v2_augdedup2",
+  "name": "GPTJ_150M_finetuned_v1v2v3_augdedup2",
   "wandb_project": "GPT-J-Architext",
   "comment": ""
 }
