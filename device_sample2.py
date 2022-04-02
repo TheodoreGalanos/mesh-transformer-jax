@@ -153,7 +153,7 @@ if __name__ == "__main__":
         
         for param_set in tqdm(generation_params):
             
-            folder = 'models/generated_data/text/GPTJ/scaling_laws/{}/topP_{}_topK_{}'.format(str(args.config, param_set[0]), str(param_set[1]))
+            folder = 'models/generated_data/text/GPTJ/scaling_laws/{}/topP_{}_topK_{}'.format(args.config, str(param_set[0]), str(param_set[1]))
             os.makedirs(folder, exist_ok=True)
             for prompt in prompts:
                 outputs = []
