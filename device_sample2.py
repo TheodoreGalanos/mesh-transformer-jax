@@ -173,7 +173,7 @@ if __name__ == "__main__":
                 decoded_output.append(tokenizer.decode(o))
 
             outputs.append(decoded_output)
-            flat_outputs = [item for sublist in outputs for item in sublist]
+            #flat_outputs = [item for sublist in outputs for item in sublist]
             with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
-                for output in flat_outputs:
+                for output in outputs:
                     f.write(output + "\n")
