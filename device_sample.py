@@ -70,7 +70,8 @@ if __name__ == "__main__":
     ckpt_step = meta["checkpoints"][-1]
     print(f"using checkpoint {ckpt_step}")
 
-    total_batch = per_replica_batch * jax.device_count() // cores_per_replica
+    #total_batch = per_replica_batch * jax.device_count() // cores_per_replica
+    total_batch = 4
     with jax.experimental.maps.mesh(devices, ('dp', 'mp')):
         network = CausalTransformer(params)
 
