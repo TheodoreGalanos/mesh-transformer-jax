@@ -155,7 +155,7 @@ if __name__ == "__main__":
             
         folder = 'GPTJ/scaling_laws/{}/'.format(args.config.split('/')[-1])
         os.makedirs(folder, exist_ok=True)
-        for prompt in prompts:
+        for prompt in tqdm(prompts):
             outputs = []
             tokens = tokenizer.encode(prompt)
             start = time.time()
