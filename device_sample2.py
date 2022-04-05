@@ -42,7 +42,7 @@ if __name__ == "__main__":
     n_heads = params["n_heads"]
     n_vocab = params["n_vocab"]
     #seq = params["seq"]
-    seq = 784
+    seq = 256
     norm = params["norm"]
 
     params["sampler"] = nucleaus_sample
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     print(f"using checkpoint {ckpt_step}")
 
     #total_batch = per_replica_batch * jax.device_count() // cores_per_replica
-    total_batch = 25
+    total_batch = 100
     
     prompts = [
         "[User prompt] a house with five rooms [Layout]",
@@ -134,14 +134,14 @@ if __name__ == "__main__":
         "[User prompt] the kitchen is in the north west side of the house [Layout]",
     ]
     
-    top_p = [0.1, 0.3, 0.5, 0.8, 0.9, 0.95, 0.99]
-    top_k = [0, 50, 100]
+    #top_p = [0.1, 0.3, 0.5, 0.8, 0.9, 0.95, 0.99]
+    top_p = 0.95
+    top_k = 100
     generation_params = list(product(top_p, top_k))
     
     with jax.experimental.maps.mesh(devices, ('dp', 'mp')):
         network = CausalTransformer(params)
 
-        start = time.time()
         network.state = read_ckpt(network.state, f"gs://{bucket}/{model_dir}/step_{ckpt_step}/", devices.shape[1])
         print(f"network loaded in {time.time() - start:.06}s")
 
@@ -151,29 +151,29 @@ if __name__ == "__main__":
 
         tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
         
-        for param_set in tqdm(generation_params):
+        #for param_set in tqdm(generation_params):
             
-            folder = 'GPTJ/scaling_laws/{}/topP_{}_topK_{}'.format(args.config.split('/')[-1], str(param_set[0]), str(param_set[1]))
-            os.makedirs(folder, exist_ok=True)
-            for prompt in prompts:
-                outputs = []
-                tokens = tokenizer.encode(prompt)
-                start = time.time()
-                provided_ctx = len(tokens)
-                pad_amount = seq - provided_ctx
-                #pad_amount = seq + provided_ctx
-                padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
-                batched_tokens = np.array([padded_tokens] * total_batch)
-                length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
-                output = network.generate(batched_tokens, length, 256, {"top_p": np.ones(total_batch) * param_set[0],
-                                                                        "top_k": np.ones(total_batch) * param_set[1],
-                                                                        "temp": np.ones(total_batch) * 0.75})
-                decoded_output = []
-                for idx, o in enumerate(output[1][0][:, :, 0]):
-                    decoded_output.append(tokenizer.decode(o))
+        folder = 'GPTJ/scaling_laws/{}/'.format(args.config.split('/')[-1])
+        os.makedirs(folder, exist_ok=True)
+        for prompt in prompts:
+            outputs = []
+            tokens = tokenizer.encode(prompt)
+            start = time.time()
+            provided_ctx = len(tokens)
+            pad_amount = seq - provided_ctx
+            #pad_amount = seq + provided_ctx
+            padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
+            batched_tokens = np.array([padded_tokens] * total_batch)
+            length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
+            output = network.generate(batched_tokens, length, 256, {"top_p": np.ones(total_batch) * 0.95,
+                                                                    #"top_k": np.ones(total_batch) * 100,
+                                                                    "temp": np.ones(total_batch) * 0.5})
+            decoded_output = []
+            for idx, o in enumerate(output[1][0][:, :, 0]):
+                decoded_output.append(tokenizer.decode(o))
 
-                outputs.append(decoded_output)
-                flat_outputs = [item for sublist in outputs for item in sublist]
-                with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
-                    for output in flat_outputs:
-                        f.write(output + "\n")
+            outputs.append(decoded_output)
+            flat_outputs = [item for sublist in outputs for item in sublist]
+            with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
+                for output in flat_outputs:
+                    f.write(output + "\n")
