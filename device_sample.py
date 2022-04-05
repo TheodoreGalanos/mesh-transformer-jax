@@ -99,7 +99,7 @@ if __name__ == "__main__":
             length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
 
             output = network.generate(batched_tokens, length, 256, {"top_p": np.ones(total_batch) * 0.95,
-                                                                    #"top_k": np.ones(total_batch) * 0,
+                                                                    "top_k": np.ones(total_batch) * 0.0,
                                                                     "temp": np.ones(total_batch) * 0.75})
 
             for idx, o in enumerate(output[1][0][:, :, 0]):
