@@ -42,7 +42,7 @@ if __name__ == "__main__":
     n_heads = params["n_heads"]
     n_vocab = params["n_vocab"]
     #seq = params["seq"]
-    seq = 784
+    seq = 256
     norm = params["norm"]
 
     params["sampler"] = nucleaus_sample
