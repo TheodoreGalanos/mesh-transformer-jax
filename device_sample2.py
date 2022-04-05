@@ -70,7 +70,8 @@ if __name__ == "__main__":
     ckpt_step = meta["checkpoints"][-1]
     print(f"using checkpoint {ckpt_step}")
 
-    total_batch = per_replica_batch * jax.device_count() // cores_per_replica
+    #total_batch = per_replica_batch * jax.device_count() // cores_per_replica
+    total_batch = 25
     
     prompts = [
         "[prompt] a house with five rooms [layout]",
@@ -156,23 +157,22 @@ if __name__ == "__main__":
             os.makedirs(folder, exist_ok=True)
             for prompt in prompts:
                 outputs = []
-                for i in range(0, 25):
-                    tokens = tokenizer.encode(prompt)
-                    start = time.time()
-                    provided_ctx = len(tokens)
-                    pad_amount = seq - provided_ctx
-                    #pad_amount = seq + provided_ctx
-                    padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
-                    batched_tokens = np.array([padded_tokens] * total_batch)
-                    length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
-                    output = network.generate(batched_tokens, length, 512, {"top_p": np.ones(total_batch) * param_set[0],
-                                                                            "top_k": np.ones(total_batch) * param_set[1],
-                                                                            "temp": np.ones(total_batch) * 0.75})
-                    decoded_output = []
-                    for idx, o in enumerate(output[1][0][:, :, 0]):
-                        decoded_output.append(tokenizer.decode(o))
+                tokens = tokenizer.encode(prompt)
+                start = time.time()
+                provided_ctx = len(tokens)
+                pad_amount = seq - provided_ctx
+                #pad_amount = seq + provided_ctx
+                padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
+                batched_tokens = np.array([padded_tokens] * total_batch)
+                length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
+                output = network.generate(batched_tokens, length, 512, {"top_p": np.ones(total_batch) * param_set[0],
+                                                                        "top_k": np.ones(total_batch) * param_set[1],
+                                                                        "temp": np.ones(total_batch) * 0.75})
+                decoded_output = []
+                for idx, o in enumerate(output[1][0][:, :, 0]):
+                    decoded_output.append(tokenizer.decode(o))
 
-                    outputs.append(decoded_output)
+                outputs.append(decoded_output)
                 flat_outputs = [item for sublist in outputs for item in sublist]
                 with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
                     for output in flat_outputs:
