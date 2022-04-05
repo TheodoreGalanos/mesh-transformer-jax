@@ -135,9 +135,9 @@ if __name__ == "__main__":
     ]
     
     #top_p = [0.1, 0.3, 0.5, 0.8, 0.9, 0.95, 0.99]
-    top_p = 0.95
-    top_k = 100
-    generation_params = list(product(top_p, top_k))
+    #top_p = 0.95
+    #top_k = 100
+    #generation_params = list(product(top_p, top_k))
     
     with jax.experimental.maps.mesh(devices, ('dp', 'mp')):
         network = CausalTransformer(params)
