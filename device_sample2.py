@@ -176,4 +176,4 @@ if __name__ == "__main__":
             #flat_outputs = [item for sublist in outputs for item in sublist]
             with open(folder + '/{}.txt'.format(prompt.replace(' ', '_')), 'w', encoding='utf8') as f:
                 for output in outputs:
-                    f.write(output + "\n")
+                    f.write(output[0] + "\n")
