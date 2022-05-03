@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "all-models",
-  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_6B_rotary_adapters",
+  "model_dir": "models/EleutherAI/GPT-J/mesh_jax_pile_6B_rotary",
 
   "train_set": "architext.train.index",
   "val_set": {
