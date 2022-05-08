@@ -21,11 +21,11 @@
     "tpu_size": 8,
   
     "bucket": "all-models",
-    "model_dir": "autonomation/models/EleutherAI/GPT-J/pile150M_v1_8L_1656D",
+    "model_dir": "autonomation/models/EleutherAI/GPT-J/pile150M_v2_8L_1656D",
   
-    "train_set": "autonomation_train_v1.index",
+    "train_set": "autonomation_train_v2.index",
     "val_set": {
-      "architext": "autonomation_test_v1.index"},
+      "architext": "autonomation_test_v2.index"},
     
     "eval_harness_tasks": [
     ],
@@ -35,7 +35,7 @@
     "ckpt_every": 200,
     "keep_every": 500,
   
-    "name": "GPTJ_pile150M_v1_8L_1656D",
+    "name": "GPTJ_pile150M_v2_8L_1656D",
     "wandb_project": "autonomation",
     "comment": ""
 }
