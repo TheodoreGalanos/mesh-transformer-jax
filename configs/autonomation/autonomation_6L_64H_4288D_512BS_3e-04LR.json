@@ -11,21 +11,21 @@
     "per_replica_batch": 2,
     "gradient_accumulation_steps": 32,
   
-    "warmup_steps": 283,
-    "anneal_steps": 2553,
+    "warmup_steps": 298,
+    "anneal_steps": 2689,
     "lr": 5e-5,
     "end_lr": 5e-6,
     "weight_decay": 0.1,
-    "total_steps": 2836,
+    "total_steps": 2987,
   
     "tpu_size": 8,
   
     "bucket": "all-models",
     "model_dir": "autonomation/models/EleutherAI/GPT-J/pile150M_v2_6L_4288D",
   
-    "train_set": "autonomation_train_v2.index",
+    "train_set": "autonomation_train_v3.index",
     "val_set": {
-      "architext": "autonomation_test_v2.index"},
+      "architext": "autonomation_test_v3.index"},
     
     "eval_harness_tasks": [
     ],
@@ -35,7 +35,7 @@
     "ckpt_every": 200,
     "keep_every": 500,
   
-    "name": "GPTJ_pile150M_v2_6L_4288D",
+    "name": "GPTJ_pile150M_v3_6L_4288D",
     "wandb_project": "autonomation",
     "comment": ""
 }
